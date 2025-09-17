@@ -25,7 +25,7 @@ How to reason about remediation and secure configuration.
 
 - System-wide locations that often contain privileged binaries, config, and flags (look at file ownership and permissions).
 
-- User home directories — check for readable files that may contain hints or public artifacts.
+- User home directories; check for readable files that may contain hints or public artifacts.
 
 - Root-owned top-level directories (/root, /etc) for protected artifacts (you won’t have access initially; learn how escalation works).
 
