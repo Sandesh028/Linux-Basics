@@ -1,61 +1,37 @@
-# Linux-Basics
-## Linux CTF Training 
+# 🐧 Linux CTF Training Environment
 
-### Welcome!
-This container is a safe, isolated training environment to learn Linux privilege-escalation fundamentals and common misconfigurations. You will be presented with several short, focused challenges. The goal is learning by exploring — we will tell you where to look and which commands/tools to use, but we won't provide direct solutions. Think like an investigator: examine, hypothesize, and test.
+Welcome! This container provides a **safe playground** for learning Linux basics and practicing Capture the Flag (CTF) style challenges.  
+You’ll explore, discover, and escalate privileges — just like an attacker might do — but all **inside an isolated Docker container**.
 
-Important: this lab runs inside a container and is intentionally vulnerable for training only. Do not mount host folders or run with --privileged. Keep everything isolated.
+---
 
-#### What you should learn: 
+
+## 🎯 Learning Objectives
+
+By the end of this lab, you will:
+
+1. Navigate the Linux filesystem as a non-root user.  
+2. Explore file permissions and hidden files.  
+3. Discover and understand **SUID binaries**.  
+4. Perform a simple **privilege escalation**.  
+5. Locate and read multiple challenge flags.  
+
+---
+
+## 🚀 Starting the Lab
+
+Build and run the container:
+
+```bash
+# Build (only once)
+docker build -t basic .
+
+# Run (fresh container each time)
+docker run -it basic
 ```
 
-How to discover privileged files and misconfigurations (SUID, file permissions, sudo rules).
-
-How to inspect binaries and config files safely (use strings, file, ldd, ls -l).
-
-Basic privilege escalation concepts (SUID misuse, sudo misconfiguration, PATH / helper issues).
-
-How to reason about remediation and secure configuration.
-```
-
-
-## Where to start (places to inspect)
-
-- Explore these areas and concepts. We list places rather than explicit answers:
-
-- System-wide locations that often contain privileged binaries, config, and flags (look at file ownership and permissions).
-
-- User home directories; check for readable files that may contain hints or public artifacts.
-
-- Root-owned top-level directories (/root, /etc) for protected artifacts (you won’t have access initially; learn how escalation works).
-
-- Sudo configuration and sudo-related files (who can run what).
-
-
-## Useful commands & tools (learn these)
-
-These commands are allowed and expected in the lab. Use them to examine the system — learn their output and what it implies.
-
-#### Basic identity & file commands
-- whoami
-- id
-- pwd
-- ls -la /path
-- stat /path
-
-
-
-sudo -l (to see what your user may run)
-
-## There are 3 users:
-* root
-* ctfplayer : ctfplayer
-* challenger : challenger
-```
-# To switch user:
-su - username
-```
-```
-# To exit:
-exit
-```
+## Commands 
+* whoami        # check your current user
+* id            # see your UID and groups
+* pwd           # show current directory
+* ls            # list files, (-l) permissions of files, (-a) including hidden ones
