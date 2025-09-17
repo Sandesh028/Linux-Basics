@@ -1,7 +1,7 @@
 # 🐧 Linux CTF Training Environment
 
 Welcome! This container provides a **safe playground** for learning Linux basics and practicing Capture the Flag (CTF) style challenges.  
-You’ll explore, discover, and escalate privileges — just like an attacker might do — but all **inside an isolated Docker container**.
+You’ll explore, discover, and escalate privileges just like an attacker might do but all **inside an isolated Docker container**.
 
 ---
 
